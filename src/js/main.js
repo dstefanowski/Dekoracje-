@@ -1,0 +1,27 @@
+// const test = () => {
+// 	console.log('test')
+// 	console.log('drugi test')
+// 	// koment
+// 	console.log(test)
+// }
+
+// test()
+
+const nav = document.querySelector('.nav')
+const burgerBtn = document.querySelector('.burger-btn')
+const navItems = document.querySelectorAll('.nav__item')
+
+const handleNav = () => {
+	nav.classList.toggle('nav--active')
+	navItems.forEach(item => {
+		item.addEventListener('click', () => {
+			nav.classList.remove('nav--active')
+		})
+	})
+
+}
+
+
+
+burgerBtn.addEventListener('click', handleNav)
+

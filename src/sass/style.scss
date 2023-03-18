@@ -1,0 +1,642 @@
+@use './colors' as c;
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: 'Poiret One', cursive;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+h1 {
+	text-align: center;
+	font-size: 3.6rem;
+	margin: 20px 0;
+}
+
+a {
+	font-size: 1.6rem;
+	text-decoration: none;
+}
+
+img {
+	height: auto;
+	width: 100%;
+	max-width: 600px;
+}
+
+hr {
+	width: 40%;
+}
+
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+textarea {
+	resize: vertical;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ul {
+	display: flex;
+	// justify-content: center;
+	align-items: center;
+	font-size: 1.6rem;
+	list-style-type: none;
+}
+
+footer {
+	background-color: c.$black;
+	color: c.$white;
+	padding: 10px 0;
+	margin-top: 20px;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.sub-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	letter-spacing: 2px;
+	color: c.$dark-grey;
+
+	&::before,
+	&::after {
+		width: 50px;
+		height: 2px;
+		margin: 0 20px;
+		background-color: c.$main-color;
+		content: '';
+	}
+}
+
+.section-title {
+	margin: 20px 0;
+	padding: 10px 20px;
+	background-color: c.$white;
+	text-align: center;
+	font-size: 2.5rem;
+}
+
+.textcontent {
+	margin: 10px 30px;
+	font-size: 1.6rem;
+	text-align: center;
+}
+
+// =====================================================
+
+.burger-btn {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	margin-bottom: 10px;
+	padding: 1em;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 3;
+
+	&:focus {
+		outline: none;
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		border-radius: 8px;
+	}
+
+	&:hover {
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
+			width: 100%;
+		}
+	}
+
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		position: absolute;
+		right: 0;
+		height: 3px;
+		content: '';
+		background-color: c.$black;
+		transition: width 0.3s;
+	}
+
+	&__bars {
+		width: 100%;
+
+		&::after {
+			top: 13px;
+			width: 60%;
+		}
+
+		&::before {
+			top: 27px;
+			width: 30%;
+		}
+	}
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateX(100%);
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	background-image: c.$main-gradient;
+	z-index: 2;
+
+	&--active {
+		transform: translateX(0);
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 1em;
+		font-size: 2.8rem;
+		color: c.$black;
+		text-align: center;
+		text-decoration: none;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transform: scaleY(0);
+			transition: transform 0.3s;
+			background-color: rgba(c.$second-color, $alpha: 0.2);
+			content: '';
+		}
+
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+.heading {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	height: 90vh;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.95),
+			rgba(255, 255, 255, 0.95)
+		),
+		url('../img/hero-small.jpg');
+	background-size: cover;
+
+	&__content {
+		position: absolute;
+		top: 80px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		color: c.$dark-grey;
+
+		.section-title {
+			margin: 20px;
+		}
+	}
+
+	&__rose-img {
+		width: 300px;
+	}
+
+	.arrow-down {
+		position: absolute;
+		bottom: 15px;
+		width: 33px;
+		height: 33px;
+		border: 2px solid c.$main-color;
+		border-left: 0;
+		border-top: 0;
+		transform: rotate(45deg) translateX(-75.5%);
+		text-align: center;
+		font-size: 3.6rem;
+		transition: 0.2s;
+
+		&:hover {
+			width: 45px;
+			height: 45px;
+		}
+	}
+}
+
+.site-main-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.3),
+			rgba(255, 255, 255, 0.3)
+		),
+		url('../img/decor-small.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+	&__sentence {
+		font-size: 4.6rem;
+		margin: 30px 50px;
+		padding: 15px;
+		background-color: c.$white;
+		border-radius: 3px;
+	}
+}
+
+.offer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding-bottom: 30px;
+	.textcontent {
+		max-width: 500px;
+	}
+
+	&__card {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		margin: 20px;
+		height: 337px;
+		max-height: 337px;
+		width: 245px;
+		max-width: 245px;
+		border-radius: 5px;
+		// box-shadow: 8px 8px 10px -5px rgba(208, 208, 208, 1);
+		overflow: hidden;
+
+		img {
+			height: 110%;
+		}
+
+		&-title {
+			position: absolute;
+			top: 20px;
+			padding: 20px 30px;
+			font-size: 1.6rem;
+			background-color: rgba(c.$white, $alpha: 0.8);
+			color: c.$black;
+			text-align: center;
+			transition: 0.2s;
+		}
+
+		&--wedding-img,
+		&--neons-img,
+		&--decor-img,
+		&--arch-img,
+		&--guests-img {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-size: cover;
+			transition: 0.2s;
+		}
+	}
+}
+
+.howto {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	padding-bottom: 40px;
+	background-image: linear-gradient(
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.8)
+		),
+		url('../img/reserved-small.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	overflow: hidden;
+
+	.section-title {
+		z-index: 1;
+	}
+
+	&__card {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
+		width: 90%;
+		padding: 15px 15px 15px 15px;
+		// background-color: c.$light-grey;
+
+		&-frame {
+			position: relative;
+			margin-top: 30px;
+			padding: 15px 0;
+			background-color: c.$white;
+
+			&--title {
+				// margin-top: 20px;
+				margin-bottom: 15px;
+				font-size: 1.8rem;
+
+				.fancy-number {
+					color: c.$main-color;
+				}
+			}
+			.textcontent {
+				margin-top: 10px;
+			}
+
+			.fa-solid {
+				font-size: 3rem;
+				color: c.$main-color;
+			}
+		}
+	}
+}
+
+.contact {
+	height: 100vh;
+	background-color: c.$light-grey;
+}
+
+// ==========================================
+// MEDIA
+
+@media (min-width: 375px) {
+	.textcontent {
+		margin-top: 30px;
+		margin-bottom: 20px;
+		font-size: 2rem;
+	}
+
+	.heading {
+		&__content {
+			top: 100px;
+		}
+		.arrow-down {
+			bottom: 50px;
+			font-size: 6rem;
+			width: 40px;
+			height: 40px;
+		}
+	}
+
+	.howto {
+		&__card {
+			&-frame {
+				.fa-solid {
+					font-size: 4rem;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 576px) {
+	.textcontent {
+		margin-top: 30px;
+		font-size: 2.4rem;
+	}
+
+	.heading {
+		.arrow-down {
+			bottom: 120px;
+			font-size: 6rem;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.heading {
+		&__content {
+			top: 160px;
+		}
+
+		&__rose-img {
+			width: 450px;
+		}
+
+		.section-title {
+			margin-top: 30px;
+			font-size: 3.4rem;
+		}
+
+		.sub-title {
+			margin: 10px 0;
+			font-size: 2.8rem;
+		}
+
+		.textcontent {
+			margin: 50px 60px;
+			font-size: 2.5rem;
+		}
+
+		.arrow-down {
+			bottom: 160px;
+			font-size: 5.6rem;
+		}
+	}
+	.offer__box {
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.howto {
+		&__card {
+			&-frame {
+				&--title {
+					font-size: 2.4rem;
+					letter-spacing: 2px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 992px) {
+	.section-title {
+		font-size: 3.4rem;
+	}
+
+	.heading {
+		background-image: linear-gradient(
+				rgba(255, 255, 255, 0.95),
+				rgba(255, 255, 255, 0.95)
+			),
+			url('../img/hero-big.jpg');
+		&__content {
+			top: 30%;
+		}
+
+		.arrow-down {
+			bottom: 45px;
+		}
+	}
+
+	.site-main-title {
+		background-image: linear-gradient(
+				rgba(255, 255, 255, 0.3),
+				rgba(255, 255, 255, 0.3)
+			),
+			url('../img/decor-big.jpg');
+		background-size: cover;
+
+		&__sentence {
+			font-size: 7.6rem;
+		}
+	}
+
+	.howto {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		background-color: c.$dark-grey;
+
+		&__bw-img {
+			position: absolute;
+			left: -200px;
+			top: -280px;
+			width: 100%;
+			height: 960px;
+			background-image: url('../img/reserved-big.jpg');
+			background-position: center;
+			background-size: cover;
+		}
+
+		&__card {
+			align-items: flex-end;
+			margin-top: 100px;
+			&-frame {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: 0;
+				padding: 40px 0 40px 100px;
+				// padding-left: 100px;
+				width: 650px;
+				background-color: c.$light-grey;
+
+				&--title {
+					letter-spacing: 4px;
+
+					.fancy-number {
+						position: absolute;
+						bottom: 10px;
+						left: 80px;
+						color: c.$main-dark;
+						font-size: 12rem;
+						font-family: 'Allura', cursive;
+					}
+				}
+
+				.textcontent {
+					width: 400px;
+					font-size: 1.8rem;
+					text-align: center;
+				}
+
+				.fa-solid {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.burger-btn {
+		top: 40px;
+		right: 40px;
+	}
+
+	.heading {
+		&__content {
+			top: 15%;
+		}
+
+		.arrow-down {
+			bottom: 45px;
+		}
+	}
+
+	.offer {
+		&__card:hover .offer__card--wedding-img {
+			height: 105%;
+			width: 105%;
+			border-radius: 8px;
+		}
+		&__card:hover .offer__card--neons-img {
+			height: 105%;
+			width: 105%;
+			border-radius: 8px;
+		}
+		&__card:hover .offer__card--decor-img {
+			height: 105%;
+			width: 105%;
+			border-radius: 8px;
+		}
+		&__card:hover .offer__card--arch-img {
+			height: 105%;
+			width: 105%;
+			border-radius: 8px;
+		}
+		&__card:hover .offer__card--guests-img {
+			height: 105%;
+			width: 105%;
+			border-radius: 8px;
+		}
+
+		&__card:hover .offer__card-title {
+			// top: 25px;
+			padding: 15px 20px;
+			color: c.$main-color;
+		}
+	}
+}
