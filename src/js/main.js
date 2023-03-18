@@ -18,10 +18,8 @@ const handleNav = () => {
 			nav.classList.remove('nav--active')
 		})
 	})
-
 }
 
-
-
 burgerBtn.addEventListener('click', handleNav)
+
 
