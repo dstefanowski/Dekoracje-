@@ -69,10 +69,37 @@ ul {
 }
 
 footer {
-	background-color: c.$black;
-	color: c.$white;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	padding: 10px 0;
-	margin-top: 20px;
+	background-color: #202020;
+	color: c.$white;
+
+	hr {
+		width: 80%;
+		color: c.$white;
+	}
+
+	.footer__box {
+		display: flex;
+		justify-content: center;
+		margin: 10px 15px;
+		&--left {
+			max-width: 70%;
+		}
+		&--right {
+			display: flex;
+			flex-direction: row;
+			height: 100%;
+			i {
+				margin: 5px;
+				color: c.$main-color;
+				font-size: 2.6rem;
+				transition: 0.2s;
+			}
+		}
+	}
 }
 
 .wrapper {
@@ -401,7 +428,6 @@ footer {
 }
 
 .contact {
-	// height: 100vh;
 	background-color: c.$half-black;
 
 	.section-title {
@@ -414,7 +440,9 @@ footer {
 	&__section {
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		flex-direction: column;
+
 		&-box--left {
 			.form-control {
 				width: 300px;
@@ -437,15 +465,30 @@ footer {
 				transition: 0.3s;
 			}
 
-			// button {
-			// 	width: 100px;
-			// 	height: 45px;
-			// }
-
 			.send-button:hover {
-				background-color: #7cbbcb;
-				box-shadow: 0 0 0 5px #3b83f65f;
+				background-color: c.$hover1;
+				box-shadow: 0 0 0 5px c.$hover2;
 				color: #fff;
+			}
+		}
+
+		&-box--right {
+			display: flex;
+			flex-direction: column;
+			// align-items: center;
+			flex-wrap: wrap;
+			margin: 20px 40px;
+			color: c.$light-grey;
+			font-size: 1.8rem;
+
+			.location,
+			.number {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				i {
+					margin-right: 10px;
+				}
 			}
 		}
 	}
@@ -539,6 +582,24 @@ footer {
 				&--title {
 					font-size: 2.4rem;
 					letter-spacing: 2px;
+				}
+			}
+		}
+	}
+
+	.contact__section {
+		.form-control,
+		.send-button {
+			width: 500px;
+		}
+	}
+
+	footer {
+		.footer__box {
+			&--right {
+				margin-left: 30px;
+				i:hover {
+					color: c.$hover1;
 				}
 			}
 		}
@@ -683,6 +744,13 @@ footer {
 			// top: 25px;
 			padding: 15px 20px;
 			color: c.$main-color;
+		}
+	}
+
+	.contact__section {
+		.form-control,
+		.send-button {
+			width: 650px;
 		}
 	}
 }
