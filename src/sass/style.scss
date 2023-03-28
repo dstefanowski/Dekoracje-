@@ -227,6 +227,11 @@ footer {
 		color: c.$black;
 		text-align: center;
 		text-decoration: none;
+		transition: color 0.3s;
+
+		&:hover {
+			color: c.$half-black;
+		}
 
 		&::before {
 			position: absolute;
