@@ -274,6 +274,10 @@ footer {
 		.section-title {
 			margin: 20px;
 		}
+
+		.sub-title {
+			font-size: 2rem;
+		}
 	}
 
 	&__rose-img {
@@ -513,9 +517,14 @@ footer {
 	.heading {
 		&__content {
 			top: 100px;
+
+			.sub-title {
+				h3 {
+					font-size: 2rem;
+				}
+			}
 		}
 		.arrow-down {
-			bottom: 50px;
 			font-size: 6rem;
 			width: 40px;
 			height: 40px;
@@ -540,7 +549,7 @@ footer {
 
 	.heading {
 		.arrow-down {
-			bottom: 120px;
+			bottom: 60px;
 			font-size: 6rem;
 		}
 	}
@@ -562,7 +571,10 @@ footer {
 
 		.sub-title {
 			margin: 10px 0;
-			font-size: 2.8rem;
+
+			h3 {
+				font-size: 3.2rem;
+			}
 		}
 
 		.textcontent {
@@ -571,7 +583,6 @@ footer {
 		}
 
 		.arrow-down {
-			bottom: 160px;
 			font-size: 5.6rem;
 		}
 	}
@@ -622,13 +633,6 @@ footer {
 				rgba(255, 255, 255, 0.95)
 			),
 			url('../img/hero-big.jpg');
-		&__content {
-			top: 30%;
-		}
-
-		.arrow-down {
-			bottom: 45px;
-		}
 	}
 
 	.site-main-title {
