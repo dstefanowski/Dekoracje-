@@ -319,7 +319,7 @@ footer {
 	background-position: center;
 	background-attachment: fixed;
 
-	&__sentence {
+	&__s {
 		font-size: 4.6rem;
 		margin: 30px 50px;
 		padding: 15px;
@@ -504,6 +504,60 @@ footer {
 	}
 }
 
+// WEDDING PAGE
+// =============================================
+
+.subpage-nav {
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 0 15px;
+	background-color: c.$white;
+
+	h1 {
+		margin: 10px 0;
+		font-size: 3rem;
+		// margin: 28px 0;
+	}
+	&__home-btn {
+		padding: 5px;
+		// margin-left: 10px;
+		border-radius: 8px;
+	}
+}
+
+.subpage-nav2 {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	top: 92px;
+	height: 100px;
+	width: 100%;
+	background-color: c.$half-black;
+	overflow: scroll;
+
+	.active {
+		background-color: c.$main-color;
+	}
+
+	&__link-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 50%;
+		margin: 0 10px;
+		padding: 5px 23px;
+		font-size: 1.5rem;
+		border-radius: 5px;
+	}
+}
+.gallery {
+	height: 100vh;
+	background-color: c.$light-grey;
+}
+
 // ==========================================
 // MEDIA
 
@@ -643,7 +697,7 @@ footer {
 			url('../img/decor-big.jpg');
 		background-size: cover;
 
-		&__sentence {
+		&__s {
 			font-size: 7.6rem;
 		}
 	}
