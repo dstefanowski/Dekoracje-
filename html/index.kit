@@ -141,18 +141,20 @@
             <div class="wrapper ">
                 <div class="contact__section">
                     <div class="contact__section-box--left">
-                        <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko..." name="name"
-                            value="" required>
+                        <form method="post" action="">
+                            <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko..."
+                                name="name" value="" required>
 
-                        <input type="email" class="form-control" id="email" placeholder="E-mail..." name="email"
-                            value="" required>
+                            <input type="email" class="form-control" id="email" placeholder="E-mail..." name="email"
+                                value="" required>
 
-                        <textarea class="form-control" rows="10" placeholder="Wiadomość..." name="message"
-                            required></textarea>
+                            <textarea class="form-control" rows="10" placeholder="Wiadomość..." name="message"
+                                required></textarea>
 
-                        <button class="send-button">
-                            WYŚLIJ
-                        </button>
+                            <button class="send-button">
+                                WYŚLIJ
+                            </button>
+                        </form>
                     </div>
 
                     <div class="contact__section-box--right" data-aos="fade-left" data-aos-anchor="#contact"
