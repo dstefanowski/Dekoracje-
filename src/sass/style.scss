@@ -523,8 +523,11 @@ footer {
 	}
 	&__home-btn {
 		padding: 5px;
-		// margin-left: 10px;
 		border-radius: 8px;
+		color: c.$black;
+		i {
+			color: c.$main-color;
+		}
 	}
 }
 
@@ -533,7 +536,7 @@ footer {
 	display: flex;
 	align-items: center;
 	top: 92px;
-	height: 100px;
+	height: 70px;
 	width: 100%;
 	background-color: c.$half-black;
 	overflow: scroll;
@@ -546,11 +549,12 @@ footer {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 50%;
+		height: 40px;
 		margin: 0 10px;
 		padding: 5px 23px;
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		border-radius: 5px;
+		color: c.$black;
 	}
 }
 .gallery {
@@ -592,6 +596,20 @@ footer {
 					font-size: 4rem;
 				}
 			}
+		}
+	}
+
+	.subpage-nav {
+		h1 {
+			margin: 20px 0;
+		}
+	}
+	.subpage-nav2 {
+		top: 76px;
+		height: 80px;
+		&__link-btn {
+			height: 50px;
+			font-size: 1.5rem;
 		}
 	}
 }
@@ -674,6 +692,14 @@ footer {
 				}
 			}
 		}
+	}
+
+	.subpage-nav {
+		justify-content: space-around;
+	}
+	.subpage-nav2 {
+		justify-content: center;
+		overflow: hidden;
 	}
 }
 @media (min-width: 992px) {
