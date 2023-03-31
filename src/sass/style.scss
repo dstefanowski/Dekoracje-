@@ -10,7 +10,7 @@
 html,
 body {
 	height: 100%;
-	font-family: 'Poiret One', cursive;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 html {
@@ -504,7 +504,7 @@ footer {
 	}
 }
 
-// WEDDING PAGE
+// OFFER PAGE
 // =============================================
 
 .subpage-nav {
@@ -513,20 +513,36 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
-	padding: 0 15px;
+	padding: 2px 10px;
 	background-color: c.$white;
+	text-transform: uppercase;
+	// box-shadow: 5px 5px 5px solid black;
 
 	h1 {
 		margin: 10px 0;
-		font-size: 3rem;
-		// margin: 28px 0;
+		padding: 5px 10px;
+		font-size: 2rem;
+		border-radius: 8px;
+		background-color: #e9e9e9;
+		color: c.$black;
 	}
 	&__home-btn {
 		padding: 5px;
 		border-radius: 8px;
-		color: c.$black;
+		background-color: c.$half-black;
+		color: #fff;
+		transition: 0.3s;
 		i {
 			color: c.$main-color;
+			transition: transform 0.3s;
+		}
+
+		&:hover {
+			background-color: c.$black;
+			color: c.$light-grey;
+		}
+		&:hover i {
+			transform: translateX(-10%);
 		}
 	}
 }
@@ -535,10 +551,13 @@ footer {
 	position: fixed;
 	display: flex;
 	align-items: center;
-	top: 92px;
-	height: 70px;
+	top: 74px;
+	height: 50px;
 	width: 100%;
-	background-color: c.$half-black;
+	background-color: #e9e9e9;
+	color: c.$half-black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: 100;
 	overflow: scroll;
 
 	.active {
@@ -549,17 +568,50 @@ footer {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 40px;
+		height: 30px;
 		margin: 0 10px;
 		padding: 5px 23px;
+		line-height: 12px;
 		font-size: 1.2rem;
 		border-radius: 5px;
+		background-color: c.$white;
 		color: c.$black;
+		transition: 0.2s;
+
+		&:hover {
+			color: c.$dark-grey;
+		}
 	}
 }
 .gallery {
-	height: 100vh;
-	background-color: c.$light-grey;
+	display: flex;
+	padding-top: 82px;
+
+	.gallery-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 30px;
+
+		.product {
+			margin: 20px;
+			z-index: -1;
+
+			img {
+				max-height: 500px;
+				height: 100%;
+				width: 100%;
+				// width: 400px;
+				margin-top: 20px;
+				border-radius: 5px;
+
+				&:hover {
+					background-image: c.$main-gradient;
+				}
+			}
+		}
+	}
 }
 
 // ==========================================
@@ -600,17 +652,22 @@ footer {
 	}
 
 	.subpage-nav {
+		padding: 10px;
 		h1 {
-			margin: 20px 0;
+			margin: 10px 0;
 		}
 	}
 	.subpage-nav2 {
-		top: 76px;
-		height: 80px;
+		// top: 76px;
+		height: 70px;
 		&__link-btn {
-			height: 50px;
+			height: 40px;
 			font-size: 1.5rem;
 		}
+	}
+
+	.gallery {
+		padding-top: 110px;
 	}
 }
 @media (min-width: 576px) {
@@ -694,12 +751,44 @@ footer {
 		}
 	}
 
-	.subpage-nav {
-		justify-content: space-around;
+	.navs {
+		.subpage-nav {
+			justify-content: space-around;
+
+			&__home-btn {
+				padding: 10px;
+			}
+
+			h1 {
+				padding: 10px 15px;
+			}
+		}
+		.subpage-nav2 {
+			justify-content: center;
+			overflow: hidden;
+		}
 	}
-	.subpage-nav2 {
-		justify-content: center;
-		overflow: hidden;
+
+	.gallery {
+		.gallery-box {
+			.product {
+				margin: 20px;
+				z-index: -1;
+
+				img {
+					max-height: 500px;
+					height: 100%;
+					width: 100%;
+					width: 400px;
+					margin-top: 20px;
+					border-radius: 5px;
+
+					&:hover {
+						background-image: c.$main-gradient;
+					}
+				}
+			}
+		}
 	}
 }
 @media (min-width: 992px) {
@@ -785,6 +874,14 @@ footer {
 			}
 		}
 	}
+
+	// .gallery {
+	// 	.gallery-box {
+	// 		img {
+	// 			margin: 20px;
+	// 		}
+	// 	}
+	// }
 }
 
 @media (min-width: 1100px) {
