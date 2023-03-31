@@ -1,11 +1,17 @@
-// const test = () => {
-// 	console.log('test')
-// 	console.log('drugi test')
-// 	// koment
-// 	console.log(test)
-// }
+// alert('Kod JS podpięty prawidłowo')
 
-// test()
+var prevScrollpos = window.pageYOffset
+window.onscroll = function () {
+	var currentScrollPos = window.pageYOffset
+	if (prevScrollpos > currentScrollPos) {
+		document.querySelector('.navbar1').classList.remove('scroll-down')
+		document.querySelector('.navbar1').classList.add('scroll-up')
+	} else {
+		document.querySelector('.navbar1').classList.remove('scroll-up')
+		document.querySelector('.navbar1').classList.add('scroll-down')
+	}
+	prevScrollpos = currentScrollPos
+}
 
 const nav = document.querySelector('.nav')
 const burgerBtn = document.querySelector('.burger-btn')
@@ -22,3 +28,4 @@ const handleNav = () => {
 
 burgerBtn.addEventListener('click', handleNav)
 
+// ==========================================================
