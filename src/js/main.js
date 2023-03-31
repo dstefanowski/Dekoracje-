@@ -29,3 +29,27 @@ const handleNav = () => {
 burgerBtn.addEventListener('click', handleNav)
 
 // ==========================================================
+
+function showAlert(message, duration) {
+	const alertBox = document.createElement('div')
+	alertBox.classList.add('alert')
+	alertBox.textContent = message
+	document.body.appendChild(alertBox)
+	setTimeout(function () {
+		alertBox.remove()
+	}, duration)
+}
+
+
+function copyToClipboard(elementId) {
+	const copyText = document.getElementById(elementId).textContent
+	navigator.clipboard
+		.writeText(copyText)
+		.then(() => {
+			// confirm('Tekst został skopiowany do schowka.')
+			showAlert('Tekst został skopiowany do schowka!', 2000)
+		})
+		.catch(err => {
+			console.error('Wystąpił błąd podczas kopiowania do schowka: ', err)
+		})
+}
