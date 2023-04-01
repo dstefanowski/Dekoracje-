@@ -49,7 +49,7 @@ function copyToClipboard(elementId) {
 		.writeText(copyText)
 		.then(() => {
 			// confirm('Tekst został skopiowany do schowka.')
-			showAlert('Kod produktu skopiowany do schowka!', 2000)
+			showAlert('Kod produktu skopiowany do schowka!', 1500)
 		})
 		.catch(err => {
 			console.error('Wystąpił błąd podczas kopiowania do schowka: ', err)

@@ -888,7 +888,12 @@ footer {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		background-color: c.$dark-grey;
+		// background-color: c.$dark-grey;
+		background-image: linear-gradient(
+				rgba(249, 234, 234, 0.8),
+				rgba(255, 255, 255, 0.8)
+			),
+			url('../img/reserved-big.jpg');
 
 		&__bw-img {
 			position: absolute;
@@ -896,7 +901,7 @@ footer {
 			top: -280px;
 			width: 100%;
 			height: 960px;
-			background-image: url('../img/reserved-big.jpg');
+			background-image: url('../img/bride.jpg');
 			background-position: center;
 			background-size: cover;
 		}
@@ -920,7 +925,7 @@ footer {
 
 					.fancy-number {
 						position: absolute;
-						bottom: 10px;
+						bottom: 50px;
 						left: 80px;
 						color: c.$main-dark;
 						font-size: 12rem;
