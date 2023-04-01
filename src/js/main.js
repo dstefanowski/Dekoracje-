@@ -1,9 +1,12 @@
 // alert('Kod JS podpięty prawidłowo')
 
-var prevScrollpos = window.pageYOffset
+let prevScrollpos = window.pageYOffset
 window.onscroll = function () {
-	var currentScrollPos = window.pageYOffset
-	if (prevScrollpos > currentScrollPos) {
+	let currentScrollPos = window.pageYOffset
+
+	if (currentScrollPos < 80) {
+		document.querySelector('.navbar').classList.remove('scroll-down')
+	} else if (prevScrollpos > currentScrollPos) {
 		document.querySelector('.navbar1').classList.remove('scroll-down')
 		document.querySelector('.navbar1').classList.add('scroll-up')
 	} else {
@@ -40,14 +43,13 @@ function showAlert(message, duration) {
 	}, duration)
 }
 
-
 function copyToClipboard(elementId) {
 	const copyText = document.getElementById(elementId).textContent
 	navigator.clipboard
 		.writeText(copyText)
 		.then(() => {
 			// confirm('Tekst został skopiowany do schowka.')
-			showAlert('Tekst został skopiowany do schowka!', 2000)
+			showAlert('Kod produktu skopiowany do schowka!', 2000)
 		})
 		.catch(err => {
 			console.error('Wystąpił błąd podczas kopiowania do schowka: ', err)
