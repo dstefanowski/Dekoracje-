@@ -549,7 +549,7 @@ footer {
 				color: c.$light-grey;
 			}
 			&:hover i {
-				transform: translateX(-10%);
+				transform: translateX(-15%);
 			}
 		}
 	}
@@ -568,7 +568,8 @@ footer {
 		overflow: scroll;
 
 		.active {
-			background-color: c.$main-color;
+			background-color: #222;
+			color: c.$white;
 		}
 
 		&__link-btn {
@@ -586,8 +587,8 @@ footer {
 			transition: 0.2s;
 
 			&:hover {
-				color: c.$dark-grey;
-				background-color: #f8f8f8;
+				color: c.$main-color;
+				// background-color: #f8f8f8;
 			}
 		}
 	}
