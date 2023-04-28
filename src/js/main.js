@@ -1,24 +1,8 @@
 // alert('Kod JS podpięty prawidłowo')
 // ===================================================================
 
-let rellax = new Rellax(".rellax");
+// let rellax = new Rellax(".rellax");
 // ===================================================================
-
-let prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-  let currentScrollPos = window.pageYOffset;
-
-  if (currentScrollPos < 80) {
-    document.querySelector(".navbar").classList.remove("scroll-down");
-  } else if (prevScrollpos > currentScrollPos) {
-    document.querySelector(".navbar1").classList.remove("scroll-down");
-    document.querySelector(".navbar1").classList.add("scroll-up");
-  } else {
-    document.querySelector(".navbar1").classList.remove("scroll-up");
-    document.querySelector(".navbar1").classList.add("scroll-down");
-  }
-  prevScrollpos = currentScrollPos;
-};
 
 const nav = document.querySelector(".nav");
 const burgerBtn = document.querySelector(".burger-btn");
@@ -59,3 +43,5 @@ function copyToClipboard(elementId) {
       console.error("Wystąpił błąd podczas kopiowania do schowka: ", err);
     });
 }
+
+
